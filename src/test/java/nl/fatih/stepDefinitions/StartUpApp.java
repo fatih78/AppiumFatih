@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 
 
-public class StartUpApp  extends SessionType{
+public class StartUpApp extends SessionType {
     StartUpAppPageObject startUpAppPageObject = new StartUpAppPageObject();
 
     @Given("^I install the \"([^\"]*)\" app on the emulator$")

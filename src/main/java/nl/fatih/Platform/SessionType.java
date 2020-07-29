@@ -16,23 +16,24 @@ public class SessionType {
 //    }
 
     public static AppiumDriver<MobileElement> driver;
+
     public static AppiumDriver<MobileElement> getDriver(String platform) throws IOException {
 
 
-            if (platform == null) {
-                platform = "Android";
-            }
-            // Expand with supported browsers
-            switch (platform) {
-                case "Android":
-                    driver = SessionFactory.getAndroid();
-                    break;
-                case "iOS":
-                    driver = SessionFactory.getiOS();
-                    break;
-            }
-            return driver;
+        if (platform == null) {
+            platform = "Android";
         }
+        // Expand with supported browsers
+        switch (platform) {
+            case "Android":
+                driver = SessionFactory.getAndroid();
+                break;
+            case "iOS":
+                driver = SessionFactory.getiOS();
+                break;
+        }
+        return driver;
+    }
 
 }
 
