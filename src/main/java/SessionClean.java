@@ -1,12 +1,10 @@
-import io.appium.java_client.AppiumDriver;
-
 public class SessionClean extends SessionFactory {
 
     public static void close() {
 
 
         try {
-            if (getiOS() != null || getAndroid() != null){
+            if (getiOS() != null || getAndroid() != null) {
                 getAndroid().quit();
                 getiOS();
             }
