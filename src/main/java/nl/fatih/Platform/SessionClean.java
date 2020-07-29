@@ -1,3 +1,5 @@
+package nl.fatih.Platform;
+
 public class SessionClean extends SessionFactory {
 
     public static void close() {
