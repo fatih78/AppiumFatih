@@ -2,17 +2,23 @@ package nl.fatih.Platform;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 
 public class SessionType {
-    public static AppiumDriver<MobileElement> driver;
-//    private static final String PLATFORM_NAME = "platform";
 
+//    /* Static 'instance' method */
+//    private static SessionType singleton = new SessionType();
+//    private SessionType() { }
+//    public static SessionType getInstance() {
+//        return singleton;
+//    }
+
+    public static AppiumDriver<MobileElement> driver;
     public static AppiumDriver<MobileElement> getDriver(String platform) throws IOException {
 
-        if (driver == null) {
-//            String platform = System.getProperty(PLATFORM_NAME);
+
             if (platform == null) {
                 platform = "Android";
             }
@@ -27,8 +33,6 @@ public class SessionType {
             }
             return driver;
         }
-        return driver;
-    }
 
 }
 
