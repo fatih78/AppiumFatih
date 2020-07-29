@@ -1,13 +1,14 @@
+import io.appium.java_client.AppiumDriver;
 
 public class SessionClean extends SessionFactory {
 
     public static void close() {
 
+
         try {
-            if (driver != null) {
-                driver.quit();
-//                driver.close();
-//                driver.closeApp();
+            if (getiOS() != null || getAndroid() != null){
+                getAndroid().quit();
+                getiOS();
             }
         } catch (Exception e) {
             //log.info("cannot close browser: unreachable browser", e);
