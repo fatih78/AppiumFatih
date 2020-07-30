@@ -68,6 +68,10 @@ public class StartUpApp extends SessionType {
 
     @Then("the iOS amount is equal to {string}")
     public void theIOSAmountIsEqualTo(String amount) {
-        Assert.assertTrue(driver.findElement(startUpAppPageObject.getiOSTotal()).getText().contains(amount));
+//        Another way of the assertion = more strict
+//        Assert.assertTrue(driver.findElement(startUpAppPageObject.getiOSTotal()).getText().contains(amount));
+        WebElement uiElement = driver.findElement(startUpAppPageObject.getiOSTotal());
+        String text = uiElement.getText();
+        Assert.assertTrue(text.contentEquals(amount));
     }
 }

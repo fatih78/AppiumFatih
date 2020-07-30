@@ -16,6 +16,6 @@ Feature: Starting up the app
     Then I enter the iOS price
     Then I click button iOS NL
     Then I click on the iOS calculate button
-    Then the iOS amount is equal to "200.00"
+    Then the iOS amount is equal to "242.0"
 
 
