@@ -25,10 +25,10 @@ public class SessionFactory {
         capabilities.setCapability(PLATFORM_NAME, "android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+//        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/debug/app-debug.apk");
         capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/release/app-release-unsigned.apk");
         androidDriver = new AndroidDriver(url, capabilities);
         return androidDriver;
-
     }
 
     public static IOSDriver getiOS() throws IOException {

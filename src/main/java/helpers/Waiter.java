@@ -17,7 +17,7 @@ public class Waiter {
         boolean isElementPresent;
         try{
             mobileElement =  (MobileElement) driver.findElement(locator);
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+            WebDriverWait wait = new WebDriverWait(driver, 40);
             wait.until(ExpectedConditions.visibilityOf(mobileElement));
             isElementPresent = mobileElement.isDisplayed();
             Assert.assertTrue(isElementPresent);
