@@ -9,6 +9,11 @@ Feature: Starting up the app
     Then I click on the Android calculate button
     Then the Android amount is equal to "242.00"
 
+  @Android
+  Scenario: As a user I want to install the Android app with SplashScreen
+    Given I install the "AndroidSplash" app on the emulator with splashScreen
+    Then I see the splashscreen
+
   @iOS
   Scenario: As a user I want to install the iOS app
     Given I install the "iOS" app on the emulator

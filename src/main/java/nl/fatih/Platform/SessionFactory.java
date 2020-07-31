@@ -16,6 +16,7 @@ import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 public class SessionFactory {
     public static AppiumDriver driver = null;
     static AndroidDriver androidDriver = (AndroidDriver) driver;
+    static AndroidDriver androidDriver2 = (AndroidDriver) driver;
     static IOSDriver iosDriver = (IOSDriver) driver;
 
     public static AppiumDriver<MobileElement> getAndroid() throws IOException {
@@ -34,6 +35,20 @@ public class SessionFactory {
         capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/release/app-release-unsigned.apk");
         androidDriver = new AndroidDriver(url, capabilities);
         return androidDriver;
+    }
+
+    public static AppiumDriver<MobileElement> getAndroid2() throws IOException {
+        URL url = new URL("http://127.0.0.1:4723/wd/hub");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
+        capabilities.setCapability(PLATFORM_NAME, "android");
+        capabilities.setCapability("appPackage", "com.example.fatihtaxcalculator"); // To start the the app skipping splashscreen
+        capabilities.setCapability("appActivity","com.example.fatihtaxcalculator.SplashScreen");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/release/app-release-unsigned.apk");
+        androidDriver2 = new AndroidDriver(url, capabilities);
+        return androidDriver2;
     }
 
     public static IOSDriver getiOS() throws IOException {

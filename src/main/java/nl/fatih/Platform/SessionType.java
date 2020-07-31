@@ -28,6 +28,9 @@ public class SessionType {
             case "Android":
                 driver = SessionFactory.getAndroid();
                 break;
+            case "AndroidSplash":
+                driver = SessionFactory.getAndroid2();
+                break;
             case "iOS":
                 driver = SessionFactory.getiOS();
                 break;

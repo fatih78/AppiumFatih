@@ -2,6 +2,7 @@ package nl.fatih.stepDefinitions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.appium.java_client.android.Activity;
 import nl.fatih.Platform.SessionType;
 import nl.fatih.pageObjects.StartUpAppPageObject;
 import org.junit.Assert;
@@ -43,6 +44,15 @@ public class StartUpApp extends SessionType {
     @Then("the Android amount is equal to {string}")
     public void theAndroidAmountIsEqualTo(String amount) {
         Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidTotal()).getText().contains(amount));
+    }
+
+    @Given("I install the {string} app on the emulator with splashScreen")
+    public void iInstallTheAppOnTheEmulatorWithSplashScreen(String platform) throws IOException {
+        SessionType.getDriver(platform);
+    }
+
+    @Then("I see the splashscreen")
+    public void iSeeTheSplashscreen() {
     }
 
     @Then("I see the app in the iOS emulator")
