@@ -37,6 +37,7 @@ public class SessionFactory {
         return androidDriver;
     }
 
+//    For testing splashscreen > capabilities.setCapability("appActivity","com.example.fatihtaxcalculator.SplashScreen");
     public static AppiumDriver<MobileElement> getAndroid2() throws IOException {
         URL url = new URL("http://127.0.0.1:4723/wd/hub");
         DesiredCapabilities capabilities = new DesiredCapabilities();
