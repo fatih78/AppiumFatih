@@ -2,13 +2,11 @@ package nl.fatih.stepDefinitions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import io.appium.java_client.android.Activity;
 import nl.fatih.Platform.SessionType;
 import nl.fatih.pageObjects.StartUpAppPageObject;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 
@@ -65,9 +63,9 @@ public class StartUpApp extends SessionType {
         driver.findElement(startUpAppPageObject.getiOSPrice()).sendKeys("200");
     }
 
-    @Then("I click button iOS NL")
-    public void iClickButtonIOSNL() throws InterruptedException {
-        driver.findElement(startUpAppPageObject.getiOSbuttonNL()).click();
+    @Then("I select listitem iOS {string}")
+    public void iSelectListitemIOS(String country) {
+        driver.findElement(By.xpath("//XCUIElementTypePicker[1]//XCUIElementTypePickerWheel[1]")).sendKeys(country);
     }
 
     @Then("I click on the iOS calculate button")
