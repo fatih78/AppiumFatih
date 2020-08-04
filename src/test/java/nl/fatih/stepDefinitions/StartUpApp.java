@@ -58,9 +58,9 @@ public class StartUpApp extends SessionType {
         startUpAppPageObject.getiOSLogo();
     }
 
-    @Then("I enter the iOS price")
-    public void iEnterTheIOSPrice() {
-        driver.findElement(startUpAppPageObject.getiOSPrice()).sendKeys("200");
+    @Then("I enter the iOS price {string}")
+    public void iEnterTheIOSPrice(String price) {
+        driver.findElement(startUpAppPageObject.getiOSPrice()).sendKeys(price);
     }
 
     @Then("I select listitem iOS {string}")
@@ -77,9 +77,10 @@ public class StartUpApp extends SessionType {
     @Then("the iOS amount is equal to {string}")
     public void theIOSAmountIsEqualTo(String amount) {
 //        Another way of the assertion = more strict
-//        Assert.assertTrue(driver.findElement(startUpAppPageObject.getiOSTotal()).getText().contains(amount));
-        WebElement uiElement = driver.findElement(startUpAppPageObject.getiOSTotal());
-        String text = uiElement.getText();
-        Assert.assertTrue(text.contentEquals(amount));
+        Assert.assertTrue(driver.findElement(startUpAppPageObject.getiOSTotal()).getText().contains(amount));
+//        WebElement uiElement = driver.findElement(startUpAppPageObject.getiOSTotal());
+//        String text = uiElement.getText();
+//        Assert.assertTrue(text.contentEquals(amount));
     }
+
 }

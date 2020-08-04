@@ -14,11 +14,26 @@ Feature: Starting up the app
     Given I install the "AndroidSplash" app on the emulator with splashScreen
     Then I see the splashscreen
 
+
+  @iOS
+  Scenario: As a user I want to install the iOS app and check the error handling for negative number
+    Given I install the "iOS" app on the emulator
+    Then I see the app in the iOS emulator
+    Then I enter the iOS price "-1"
+    Then I click on the iOS calculate button
+
+  @iOS
+  Scenario: As a user I want to install the iOS app and check the error handling for zero number
+    Given I install the "iOS" app on the emulator
+    Then I see the app in the iOS emulator
+    Then I enter the iOS price "0"
+    Then I click on the iOS calculate button
+
   @iOS
   Scenario: As a user I want to install the iOS app and calculate price for NL
     Given I install the "iOS" app on the emulator
     Then I see the app in the iOS emulator
-    Then I enter the iOS price
+    Then I enter the iOS price "200"
     Then I select listitem iOS "NL"
     Then I click on the iOS calculate button
     Then the iOS amount is equal to "242.0"
@@ -27,7 +42,7 @@ Feature: Starting up the app
   Scenario: As a user I want to install the iOS app and calculate price for FR
     Given I install the "iOS" app on the emulator
     Then I see the app in the iOS emulator
-    Then I enter the iOS price
+    Then I enter the iOS price "200"
     Then I select listitem iOS "FR"
     Then I click on the iOS calculate button
     Then the iOS amount is equal to "240.0"
@@ -36,7 +51,7 @@ Feature: Starting up the app
   Scenario: As a user I want to install the iOS app and calculate price for DE
     Given I install the "iOS" app on the emulator
     Then I see the app in the iOS emulator
-    Then I enter the iOS price
+    Then I enter the iOS price "200"
     Then I select listitem iOS "DE"
     Then I click on the iOS calculate button
     Then the iOS amount is equal to "250.0"
