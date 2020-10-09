@@ -11,6 +11,7 @@ public class StartUpAppPageObject extends Waiter {
     private final By androidCountryList = MobileBy.id("android:id/text1");
     private final By androidCalcButton = MobileBy.id("com.example.fatihtaxcalculator:id/etCalculateTax");
     private final By androidTotal = MobileBy.id("com.example.fatihtaxcalculator:id/etResult");
+    private final By androidFlag = MobileBy.id("com.example.fatihtaxcalculator:id/image_view_assets");
 
     private final By iOSLogo = MobileBy.id("AppLabel");
     private final By iOSPrice = MobileBy.id("Price");
@@ -19,6 +20,10 @@ public class StartUpAppPageObject extends Waiter {
     private final By iOSTotal = MobileBy.id("TotalPrice");
 
 
+    public By getAndroidFlag() {
+        waitForPresence(androidFlag);
+        return androidFlag;
+    }
 
     public By getAndroidLogo() {
         waitForPresence(androidLogo);

@@ -1,12 +1,18 @@
 Feature: Starting up the app
 
   @Android
+  Scenario: As a user I want to install the Android app with SplashScreen
+    Given I install the "AndroidSplash" app on the emulator with splashScreen
+    Then I see the splashscreen
+
+  @Android
   Scenario: As a user I want to install the Android app and calculate tax for Netherlands
     Given I install the "Android" app on the emulator
     Then I see the app in the Android emulator
     Then I enter the Android price
     Then I select country list
     Then I select "NL" as country
+    Then I see the flag
     Then the Android amount is equal to "242.00"
 
   @Android
@@ -16,12 +22,8 @@ Feature: Starting up the app
     Then I enter the Android price
     Then I select country list
     Then I select "FR" as country
+    Then I see the flag
     Then the Android amount is equal to "240.00"
-
-  @Android
-  Scenario: As a user I want to install the Android app with SplashScreen
-    Given I install the "AndroidSplash" app on the emulator with splashScreen
-    Then I see the splashscreen
 
 
   @iOS

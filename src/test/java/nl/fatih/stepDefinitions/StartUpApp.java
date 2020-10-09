@@ -65,6 +65,11 @@ public class StartUpApp extends SessionType {
         }
     }
 
+    @Then("I see the flag")
+    public void iSeeTheFlag() {
+        startUpAppPageObject.getAndroidLogo();
+    }
+
 
     @Then("I click on the Android calculate button")
     public void iClickOnTheAndroidCalculateButton() {
@@ -114,5 +119,4 @@ public class StartUpApp extends SessionType {
 //        String text = uiElement.getText();
 //        Assert.assertTrue(text.contentEquals(amount));
     }
-
 }
