@@ -45,9 +45,9 @@ public class SessionFactory {
         capabilities.setCapability(PLATFORM_NAME, "android");
         capabilities.setCapability("appPackage", "com.example.fatihtaxcalculator"); // To start the the app skipping splashscreen
         capabilities.setCapability("appActivity","com.example.fatihtaxcalculator.SplashScreen");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/release/app-release-unsigned.apk");
+        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/Projects/FatihTaxCalculator2/app/build/outputs/apk/release/app-release-unsigned.apk");
         androidDriver2 = new AndroidDriver(url, capabilities);
         return androidDriver2;
     }
@@ -58,8 +58,8 @@ public class SessionFactory {
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("platformVersion", "11.4");
         capabilities.setCapability("deviceName", "iPhone 8");
-        capabilities.setCapability("udid", "C929F924-F11C-4D88-B288-865B91A692C7");
-        capabilities.setCapability("app", "/Users/fatihtopcuoglu/Library/Developer/Xcode/DerivedData/SalesTax-aqqsmugfmohjnchfgwvizfhgwrvn/Build/Products/Release-iphonesimulator/SalesTax.app");
+        capabilities.setCapability("udid", "60DA8FD3-EBAE-4EC5-98D2-EEB6617CDE61");
+        capabilities.setCapability("app", "/Users/fatihtopcuoglu/Library/Developer/Xcode/DerivedData/SalesTax-bvatxoukkuazmjdxmzmstiuzutva/Build/Products/Release-iphonesimulator/SalesTax.app");
         iosDriver = new IOSDriver(url, capabilities);
         return iosDriver;
 
