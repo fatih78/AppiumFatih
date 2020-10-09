@@ -48,25 +48,23 @@ public class StartUpApp extends SessionType {
 
     }
 
-    @Then("I select NL as country")
-    public void iSelectNLAsCountry() {
+    @Then("I select {string} as country")
+    public void iSelectAsCountry(String country) {
 
-        MobileElement list = (MobileElement) driver.findElement(
-                MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"NL\"));"));
-        System.out.println(list.getLocation());
-        list.click();
-
+        switch (country) {
+            case "NL":
+                MobileElement list = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"NL\"));"));
+                list.click();
+                break;
+            case "FR":
+                MobileElement list2 = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"FR\"));"));
+                list2.click();
+                break;
+            default:
+                System.out.println("No Country selected");
+        }
     }
 
-    @Then("I select FR as country")
-    public void iSelectFRAsCountry() {
-
-        MobileElement list = (MobileElement) driver.findElement(
-                MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(" + "new UiSelector().text(\"FR\"));"));
-        System.out.println(list.getLocation());
-        list.click();
-
-    }
 
     @Then("I click on the Android calculate button")
     public void iClickOnTheAndroidCalculateButton() {
@@ -116,6 +114,5 @@ public class StartUpApp extends SessionType {
 //        String text = uiElement.getText();
 //        Assert.assertTrue(text.contentEquals(amount));
     }
-
 
 }

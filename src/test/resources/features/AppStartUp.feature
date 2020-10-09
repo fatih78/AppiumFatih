@@ -6,7 +6,7 @@ Feature: Starting up the app
     Then I see the app in the Android emulator
     Then I enter the Android price
     Then I select country list
-    Then I select NL as country
+    Then I select "NL" as country
     Then the Android amount is equal to "242.00"
 
   @Android
@@ -15,7 +15,7 @@ Feature: Starting up the app
     Then I see the app in the Android emulator
     Then I enter the Android price
     Then I select country list
-    Then I select FR as country
+    Then I select "FR" as country
     Then the Android amount is equal to "240.00"
 
   @Android
