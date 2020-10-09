@@ -2,9 +2,16 @@ package nl.fatih.Platform;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
 import java.io.IOException;
+
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.PointOption.point;
+import static java.time.Duration.ofSeconds;
 
 public class SessionType {
 

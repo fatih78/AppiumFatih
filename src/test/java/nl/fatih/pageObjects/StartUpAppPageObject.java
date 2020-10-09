@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class StartUpAppPageObject extends Waiter {
     private final By androidLogo = MobileBy.id("com.example.fatihtaxcalculator:id/imageView2");
     private final By androidPrice = MobileBy.id("com.example.fatihtaxcalculator:id/etPrice");
-    private final By androidButtonNL = MobileBy.id("com.example.fatihtaxcalculator:id/etNL");
+    private final By androidCountryList = MobileBy.id("android:id/text1");
     private final By androidCalcButton = MobileBy.id("com.example.fatihtaxcalculator:id/etCalculateTax");
     private final By androidTotal = MobileBy.id("com.example.fatihtaxcalculator:id/etResult");
 
@@ -30,9 +30,9 @@ public class StartUpAppPageObject extends Waiter {
         return androidPrice;
     }
 
-    public By getAndroidbuttonNL() {
-        waitForPresence(androidButtonNL);
-        return androidButtonNL;
+    public By getAndroidCountryList() {
+        waitForPresence(androidCountryList);
+        return androidCountryList;
     }
 
     public By getAndroidCalcButton() {

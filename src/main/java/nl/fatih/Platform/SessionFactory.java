@@ -27,12 +27,12 @@ public class SessionFactory {
         capabilities.setCapability(PLATFORM_NAME, "android");
         capabilities.setCapability("appPackage", "com.example.fatihtaxcalculator"); // To start the the app skipping splashscreen
         capabilities.setCapability("appActivity","com.example.fatihtaxcalculator.MainActivity");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, "true");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 
 //        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/debug/app-debug.apk");
-        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/AndroidStudioProjects/FatihTaxCalculator/app/build/outputs/apk/release/app-release-unsigned.apk");
+        capabilities.setCapability(MobileCapabilityType.APP, "/Users/fatihtopcuoglu/Projects/FatihTaxCalculator2/app/build/outputs/apk/release/app-release-unsigned.apk");
         androidDriver = new AndroidDriver(url, capabilities);
         return androidDriver;
     }
