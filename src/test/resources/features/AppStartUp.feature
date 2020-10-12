@@ -10,7 +10,7 @@ Feature: Starting up the app
     Given I install the "Android" app on the emulator
     Then I see the app in the Android emulator
     Then I enter the Android price
-    Then I select country list
+    Then I select "first" country list
     Then I select "NL" as country
     Then I see the flag
     Then the Android amount is equal to "242.00"
@@ -20,10 +20,25 @@ Feature: Starting up the app
     Given I install the "Android" app on the emulator
     Then I see the app in the Android emulator
     Then I enter the Android price
-    Then I select country list
+    Then I select "first" country list
     Then I select "FR" as country
     Then I see the flag
     Then the Android amount is equal to "240.00"
+
+  @Android
+  Scenario: As a user I want to install the Android app and calculate tax difference for France and Netherlands
+    Given I install the "Android" app on the emulator
+    Then I see the app in the Android emulator
+    Then I enter the Android price for two countries
+    Then I select "first" country list
+    Then I select "FR" as country
+    Then the "first" Android amount is equal to "240.00"
+    Then I select "second" country list
+    Then I select "NL" as country
+    Then I see the flag
+    Then the "second" Android amount is equal to "242.00"
+    Then the difference is "-2"
+
 
 
   @iOS

@@ -42,10 +42,21 @@ public class StartUpApp extends SessionType {
         driver.findElement(startUpAppPageObject.getAndroidPrice()).sendKeys("200");
     }
 
-    @Then("I select country list")
-    public void iSelectCountryList() throws IOException {
-        driver.findElement(startUpAppPageObject.getAndroidCountryList()).click();
+    @Then("I enter the Android price for two countries")
+    public void iEnterTheAndroidPriceForTwoCountries() {
+        driver.findElement(startUpAppPageObject.getAndroidPrice()).sendKeys("200");
+        driver.findElement(startUpAppPageObject.getAndroidPrice2()).sendKeys("200");
+    }
 
+    @Then("I select {string} country list")
+    public void iSelectCountryList(String list) {
+        switch (list) {
+            case "first":
+                driver.findElement(startUpAppPageObject.getAndroidCountryList()).click();
+                break;
+            case "second":
+                driver.findElement(startUpAppPageObject.getAndroidCountryList2()).click();
+        }
     }
 
     @Then("I select {string} as country")
@@ -79,6 +90,29 @@ public class StartUpApp extends SessionType {
     @Then("the Android amount is equal to {string}")
     public void theAndroidAmountIsEqualTo(String amount) {
         Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidTotal()).getText().contains(amount));
+    }
+
+    @Then("the second Android amount is equal to {string}")
+    public void theSecondAndroidAmountIsEqualTo(String amount) {
+        Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidTotal2()).getText().contains(amount));
+
+    }
+
+    @Then("the {string} Android amount is equal to {string}")
+    public void theAndroidAmountIsEqualTo(String order, String amount) {
+        switch (order) {
+            case "first":
+                Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidTotal()).getText().contains(amount));
+                break;
+            case "second":
+                Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidTotal2()).getText().contains(amount));
+                break;
+        }
+    }
+
+    @Then("the difference is {string}")
+    public void theDifferenceIs(String diff) {
+        Assert.assertTrue(driver.findElement(startUpAppPageObject.getAndroidDifference()).getText().contains(diff));
     }
 
     @Given("I install the {string} app on the emulator with splashScreen")
@@ -119,4 +153,10 @@ public class StartUpApp extends SessionType {
 //        String text = uiElement.getText();
 //        Assert.assertTrue(text.contentEquals(amount));
     }
+
+    @Then("the difference is {int}")
+    public void theDifferenceIs(int number) {
+
+    }
+
 }
