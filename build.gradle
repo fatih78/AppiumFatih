@@ -18,8 +18,9 @@ repositories {
 
 task runAppiumTest(type: Test) {
     maxParallelForks = Runtime.runtime.availableProcessors()
-    include '**/AppiumiOSRunner.class'
-    include '**/AppiumAndroidRunner.class'
+    include '**/AppiumiOSTrainingRunner.class'
+//    include '**/AppiumiOSRunner.class'
+//    include '**/AppiumAndroidRunner.class'
 }
 
 compileJava { options.encoding = "UTF-8" }

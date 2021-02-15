@@ -1,6 +1,6 @@
 Feature: Starting up the Training'a App & check elements * click button
 
-  @iOS
+  @iOSTraining
   Scenario: As a user I want to install the iOS app and check the error handling for negative number
     Given I install the training "iOSTraining" app on the emulator
     Then I click on the popup
