@@ -41,6 +41,9 @@ public class SessionType {
             case "iOS":
                 driver = SessionFactory.getiOS();
                 break;
+            case "iOSTraining":
+                driver = SessionFactory.getiOSTraining();
+                break;
         }
         return driver;
     }

@@ -63,5 +63,20 @@ public class SessionFactory {
         iosDriver = new IOSDriver(url, capabilities);
         return iosDriver;
 
+       // /Users/fatihtopcuoglu/Library/Developer/Xcode/DerivedData/ReferenceiOS-fqcxnjkwfmizmkbipjpvfjditoro/Build/Products/Debug-iphonesimulator/ReferenceiOS.app
+
+    }
+
+    public static IOSDriver getiOSTraining() throws IOException {
+        URL url = new URL("http://127.0.0.1:4723/wd/hub");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", "iOS");
+        capabilities.setCapability("platformVersion", "14.4");
+        capabilities.setCapability("deviceName", "iPhone 8");
+        capabilities.setCapability("udid", "2B39BB66-823F-437F-A43B-DDD7299ECFC7");
+        capabilities.setCapability("app", "/Users/fatihtopcuoglu/Library/Developer/Xcode/DerivedData/ReferenceiOS-fqcxnjkwfmizmkbipjpvfjditoro/Build/Products/Debug-iphonesimulator/ReferenceiOS.app");
+        iosDriver = new IOSDriver(url, capabilities);
+        return iosDriver;
+
     }
 }

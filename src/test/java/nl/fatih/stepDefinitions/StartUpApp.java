@@ -4,24 +4,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.ElementOption;
 import nl.fatih.Platform.SessionType;
 import nl.fatih.pageObjects.StartUpAppPageObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class StartUpApp extends SessionType {
