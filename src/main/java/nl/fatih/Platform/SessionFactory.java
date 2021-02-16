@@ -74,6 +74,8 @@ public class SessionFactory {
         capabilities.setCapability("platformVersion", "14.4");
         capabilities.setCapability("deviceName", "iPhone 8");
         capabilities.setCapability("udid", "2B39BB66-823F-437F-A43B-DDD7299ECFC7");
+        capabilities.setCapability("noReset", true);
+//        capabilities.setCapability("fullReset", true);
         capabilities.setCapability("app", "/Users/fatihtopcuoglu/Library/Developer/Xcode/DerivedData/ReferenceiOS-fqcxnjkwfmizmkbipjpvfjditoro/Build/Products/Debug-iphonesimulator/ReferenceiOS.app");
         iosDriver = new IOSDriver(url, capabilities);
         return iosDriver;
